@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp build && gulp serve"
+    "start": "gulp build && gulp serve",
+    "deploy": "gulp build && gulp deploy"
   },
   "browserslist": [
     "last 1 version",
