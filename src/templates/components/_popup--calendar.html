@@ -1,0 +1,40 @@
+<div class="popup popup--calendar">
+  <div class="popup__content calendar">
+      <div class="calendar__content">
+        <nav class="scroll-nav calendar__scroll-nav" data-target="calendar__month">
+
+          <div class="scroll-nav__content">
+            <ul class="scroll-nav__items">
+              <li class="scroll-nav__item">Декабрь &bull; 2017</li>
+              <li class="scroll-nav__item">Январь &bull; 2018</li>
+              <li class="scroll-nav__item">Февраль &bull; 2018</li>
+            </ul>
+          </div>
+
+          <button class="scroll-nav__control scroll-nav__control--left scroll-nav__control--inverse scroll-nav__control--tiny" type="button">
+            <svg class="scroll-nav__control-icon">
+              <use xlink:href="#arrow-left"/>
+            </svg>
+          </button>
+          <button class="scroll-nav__control scroll-nav__control--right scroll-nav__control--inverse scroll-nav__control--tiny" type="button">
+            <svg class="scroll-nav__control-icon">
+              <use xlink:href="#arrow-right"/>
+            </svg>
+          </button>
+        </nav>
+
+        <div class="calendar__monthes">
+          <div class="calendar__month calendar__month--current">
+            {{> ./_month.html }}
+          </div>
+          <div class="calendar__month">
+            {{> ./_month-even.html }}
+          </div>
+          <div class="calendar__month">
+            {{> ./_month-even.html }}
+          </div>
+        </div>
+
+      </div>
+  </div>
+</div>

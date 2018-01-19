@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles.min.css">
+    <title>Яндекс Переговорки</title>
+</head>
+<body class="page page--edit">
+  <div style="display: none">
+    {{> ../templates/components/svg-symbols.svg }}
+  </div>
+
+  {{> ../templates/components/_page-header.html }}
+
+  <main class="page-main">
+    <form class="form form--create" action="/">
+      <div class="form__inner">
+        <h1 class="form__title">Редактирование встречи</h1>
+
+        <button class="close-control form__close-control" formaction="/">
+          <svg class="close-control__icon">
+            <use xlink:href="#close"/>
+          </svg>
+        </button>
+
+        <div class="form__group form__group--subject">
+          <label class="form__label" for="subject">Тема</label>
+          <input class="form__input" type="text" name="subject" id="subject" placeholder="О чём будете говорить?" value="Тестовое задание в ШРИ">
+        </div>
+
+        <div class="form__group form__group--datetime">
+          <div class="form__select-date select-date">
+            <label class="form__label" for="date">Дата <span class="form__additional-text">и время</span></label>
+            <div class="form__input-wrapper">
+              <input class="form__input" type="text" name="date" id="date" value="14 декабря, 2017">
+              <button class="form__dropdown-control dropdown-control calendar-control" type="button">
+                <svg class="dropdown-control__icon dropdown-control__icon--calendar">
+                  <use xlink:href="#calendar"/>
+                </svg>
+              </button>
+            </div>
+
+            {{> ./components/_popup--calendar.html }}
+
+          </div>
+          <div class="form__period">
+            <div class="form__period-item">
+              <label class="form__label" for="date">Начало</label>
+              <input class="form__input" type="text" name="time-from" id="time-from" value="16:00">
+            </div>
+            <span class="form__dash">&mdash;</span>
+            <div class="form__period-item">
+              <label class="form__label" for="date">Конец</label>
+              <input class="form__input" type="text" name="time-to" id="time-to" value="16:30">
+            </div>
+          </div>
+        </div>
+
+        <div class="form__group form__group--users">
+          <label class="form__label" for="users">Участники</label>
+
+          {{> ./components/_select-users.html }}
+        </div>
+
+        <fieldset class="form__group form__group--rooms">
+          <legend class="form__legend">Ваша переговорка</legend>
+
+          {{> ./components/_select-room.html }}
+        </fieldset>
+      </div>
+
+
+      <footer class="form__footer form__footer--edit">
+        <button class="form__button form__button--cancel button">Отмена</button>
+        <div class="form__remove-wrapper">
+          <button class="form__button form__button--remove button" name="action" value="remove">Удалить встречу</button>
+        </div>
+        <button class="form__button form__button--create button button-create">Сохранить</button>
+      </footer>
+    </form>
+  </main>
+
+  {{> ./components/_popup--remove-event.html }}
+
+  <script src="../assets/js/common.js"></script>
+</body>
+</html>
