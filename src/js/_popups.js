@@ -16,7 +16,7 @@
 
   window.closePopups = closePopups;
 
-  window.addEventListener('click', event => {
+  window.addEventListener('click', () => {
     closePopups();
   });
 
